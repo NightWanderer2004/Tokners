@@ -1,0 +1,8 @@
+$green-color: #22a75d;
+$blue-color: #2278d4;
+$yellow-color: #ffd100;
+$red-color: #e20613;
+
+@mixin fill($color, $blackout) {
+   @apply bg-[#{$color}] shadow-[0_11px_23px_0_#{$color / $blackout}];
+}

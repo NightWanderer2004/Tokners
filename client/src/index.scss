@@ -1,0 +1,50 @@
+@import url(https://fonts.googleapis.com/css?family=Questrial:regular);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper {
+   overflow: visible !important;
+   &-pagination {
+      bottom: -30px !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+}
+.swiper-pagination-bullet-active {
+   background: #fff !important;
+   border: 7px solid #fff !important;
+   width: 12px !important;
+   height: 12px !important;
+}
+.swiper-pagination-bullet {
+   opacity: 1 !important;
+   background: transparent !important;
+   border: 2px solid #fff;
+}
+
+body,
+html {
+   scroll-behavior: smooth;
+}
+
+body {
+   @apply md:bg-full bg-top md:bg-right-top bg-no-repeat bg-[#0f1320] relative;
+   background-image: url('../public/assets/img/home/bg-top.png');
+
+   margin: 0;
+   font-family: 'Questrial', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+.bottomBg {
+   @apply w-full h-full pointer-events-none -z-20 absolute bottom-0 right-0 hidden md:block md:bg-full bg-right-bottom bg-no-repeat;
+   background-image: url('../public/assets/img/home/bg-bottom.png');
+}
+.wrapper {
+   min-height: 100vh;
+   overflow: hidden;
+}

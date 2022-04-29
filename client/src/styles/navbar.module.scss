@@ -1,0 +1,19 @@
+.navbar {
+   @apply gap-x-3 md:gap-x-4 lg:gap-x-5 px-2 py-7 flex items-center justify-between md:justify-start max-w-[1720px] mx-auto;
+   & img {
+      @apply w-36 md:w-40 lg:w-44 relative -top-1;
+   }
+}
+.links,
+.authBtns {
+   @apply flex gap-x-4 md:gap-x-5 text-white font-bold text-base md:text-sm;
+   & li {
+      @apply hover:text-slate-200 transition-colors;
+      & button {
+         @apply font-semibold rounded-2xl hover:border-solid border-[rgba(255,255,255,0.1)] hover:border-[#22A75D] border-2 px-9 py-3 lg:hover:scale-[1.075] lg:active:scale-[1.075] transition-all;
+      }
+   }
+}
+.authBtns {
+   @apply hidden md:flex;
+}

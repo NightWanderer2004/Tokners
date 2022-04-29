@@ -1,0 +1,76 @@
+@import '../vars.scss';
+
+.main {
+   @apply pt-12 lg:flex items-start gap-x-5;
+   & .section {
+      @apply mb-8 lg:mb-0 px-4;
+      .icon {
+         @apply flex items-end gap-x-3 mb-5 lg:mb-8;
+         & div {
+            @apply w-[82px] h-[82px] flex items-center justify-center font-bold text-2xl rounded-[100%] rounded-bl-[60%];
+         }
+         & span {
+            &::after {
+               content: '';
+               @apply absolute bottom-[30px] left-0 rounded-full w-3 h-3;
+            }
+            @apply text-white font-bold relative;
+         }
+      }
+      ol {
+         & li {
+            @apply flex items-start my-3 text-slate-300 text-lg md:text-2xl lg:text-base;
+            & span {
+               @apply mr-2 text-sm md:text-lg font-bold relative top-[3px];
+            }
+         }
+      }
+   }
+   & .section {
+      &:nth-child(1) {
+         & .icon span::after {
+            @apply bg-[#{$green-color}];
+         }
+         & .icon div {
+            @include fill($green-color, 2.5);
+         }
+         & ol li span {
+            @apply text-[#{$green-color}];
+         }
+      }
+      &:nth-child(2) {
+         & .icon span::after {
+            @apply bg-[#{$blue-color}];
+         }
+         & .icon div {
+            @include fill($blue-color, 2.5);
+         }
+         & ol li span {
+            @apply text-[#{$blue-color}];
+         }
+      }
+
+      &:nth-child(3) {
+         & .icon span::after {
+            @apply bg-[#{$yellow-color}];
+         }
+         & .icon div {
+            @include fill($yellow-color, 2.5);
+         }
+         & ol li span {
+            @apply text-[#{$yellow-color}];
+         }
+      }
+      &:nth-child(4) {
+         & .icon span::after {
+            @apply bg-[#{$red-color}];
+         }
+         & .icon div {
+            @include fill($red-color, 2.5);
+         }
+         & ol li span {
+            @apply text-[#{$red-color}];
+         }
+      }
+   }
+}

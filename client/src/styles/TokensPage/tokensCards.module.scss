@@ -1,0 +1,47 @@
+@import '../vars.scss';
+
+.main {
+   background-image: url('../../../public/assets/img/home/part2-mobile.png');
+   @apply mt-[45px] pt-[130px] lg:pt-[100px] pb-[130px] bg-no-repeat bg-center bg-full 2xl:container mx-auto;
+   & ul {
+      @apply container mx-auto px-2 flex flex-col items-center gap-y-5 lg:gap-y-8;
+      & li {
+         @apply bg-white p-[30px] lg:px-[120px] lg:py-[50px] rounded-2xl flex flex-col items-center text-center w-full lg:w-[1000px];
+         & h3 {
+            @apply font-bold text-lg lg:text-3xl lg:max-w-[800px];
+         }
+         & strong {
+            @apply text-[40px] lg:text-[90px] block my-2 lg:mb-0 lg:mt-10;
+         }
+         & span {
+            @apply self-end;
+         }
+         & p {
+            @apply text-xs lg:text-base text-slate-500 font-light mt-3 md:max-w-[600px];
+         }
+         &:nth-child(1) {
+            @apply relative lg:left-[80px];
+            & strong {
+               @apply text-[#{$green-color}];
+            }
+         }
+         &:nth-child(2) {
+            @apply relative lg:right-[80px];
+            & strong {
+               @apply text-[#{$yellow-color}];
+            }
+         }
+      }
+   }
+}
+
+@media screen and (min-width: 768px) {
+   .main {
+      background-image: none;
+   }
+}
+@media screen and (min-width: 1024px) {
+   .main {
+      background-image: url('../../../public/assets/img/home/part2.png');
+   }
+}

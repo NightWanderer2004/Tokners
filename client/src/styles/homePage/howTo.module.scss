@@ -1,0 +1,42 @@
+@import '../vars.scss';
+
+.main {
+   @apply py-8;
+   & h5 {
+      @apply text-white text-center text-4xl font-bold mb-8;
+   }
+   & ul {
+      @apply flex flex-col lg:flex-row lg:gap-x-4 justify-center;
+      & .arrow {
+         @apply bg-[#0F1320] lg:bg-transparent relative flex justify-center items-center w-[18px]  h-[18px] rounded-full scale-[3.5] lg:scale-[4.5] self-center;
+         & svg {
+            @apply w-1 lg:w-[6px] lg:-rotate-90 z-10;
+         }
+         &:nth-child(2) {
+            & svg path {
+               @apply stroke-[#{$green-color}];
+            }
+         }
+         &:nth-child(4) {
+            & svg path {
+               @apply stroke-[#{$yellow-color}];
+            }
+         }
+         &:nth-child(2) svg path {
+            @apply stroke-[#{$green-color}];
+         }
+      }
+      & .card {
+         @apply bg-[#171B29] rounded-2xl px-6 lg:px-16 py-8 lg:py-12 text-white relative -z-10;
+         &:nth-child(3) {
+            @apply relative lg:top-[35px];
+         }
+         & span {
+            @apply text-slate-600 lg:absolute top-5 left-5;
+         }
+         & p {
+            @apply font-bold text-lg pt-4;
+         }
+      }
+   }
+}

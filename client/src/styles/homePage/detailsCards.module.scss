@@ -1,0 +1,65 @@
+@import '../vars.scss';
+
+.main {
+   background-image: url('../../../public/assets/img/home/part2-mobile.png');
+   @apply mt-[45px] pt-[130px] lg:pt-[245px] pb-[150px] bg-no-repeat bg-center bg-full 2xl:container mx-auto;
+   & h3 {
+      @apply text-white font-bold text-center text-4xl md:text-5xl mb-5;
+   }
+   & ul {
+      @apply lg:justify-center;
+      & li {
+         @apply relative flex flex-col items-center text-center bg-white rounded-xl lg:max-w-[400px] py-[75px] lg:py-[90px];
+         & h6 {
+            @apply text-slate-50 text-[220px] lg:text-[280px] font-bold absolute -top-5 z-10;
+         }
+         &:nth-child(1) .icon {
+            @apply bg-[#{$green-color}];
+            @include fill($green-color, 1);
+         }
+         &:nth-child(2) {
+            @apply relative lg:top-12;
+            & .icon {
+               @apply bg-[#{$blue-color}];
+               @include fill($blue-color, 1);
+            }
+         }
+         &:nth-child(3) .icon {
+            @apply bg-[#{$yellow-color}];
+            @include fill($yellow-color, 1);
+         }
+      }
+   }
+}
+@media screen and (min-width: 768px) {
+   .main {
+      background-image: none;
+   }
+}
+@media screen and (min-width: 1024px) {
+   .main {
+      background-image: url('../../../public/assets/img/home/part2.png');
+   }
+   ul {
+      transform: none !important;
+   }
+}
+.icon,
+.body {
+   @apply z-20 font-bold;
+}
+.icon {
+   @apply w-[75px] h-[75px] flex items-center justify-center font-bold text-2xl rounded-[100%] rounded-bl-[60%] mb-8;
+}
+.body {
+   & h5 {
+      @apply text-3xl mb-3;
+   }
+   & p,
+   & span {
+      @apply font-normal;
+   }
+   & h4 {
+      @apply mt-5 mb-3;
+   }
+}
