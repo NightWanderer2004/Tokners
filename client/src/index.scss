@@ -31,9 +31,11 @@ html {
 }
 
 body {
+   &.noScroll {
+      @apply overflow-hidden;
+   }
    @apply md:bg-full bg-top md:bg-right-top bg-no-repeat bg-[#0f1320] relative;
    background-image: url('../public/assets/img/home/bg-top.png');
-
    margin: 0;
    font-family: 'Questrial', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

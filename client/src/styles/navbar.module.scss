@@ -1,19 +1,45 @@
+@import './vars.scss';
+
 .navbar {
-   @apply gap-x-3 md:gap-x-4 lg:gap-x-5 px-2 py-7 flex items-center justify-between md:justify-start max-w-[1720px] mx-auto;
+   @apply gap-x-3 md:gap-x-4 lg:gap-x-5 px-2 my-7 h-[52px] flex items-center justify-between md:justify-start max-w-[1720px] mx-auto;
    & img {
-      @apply w-36 md:w-40 lg:w-44 relative -top-1;
+      @apply w-36 md:w-40 lg:w-44 relative -top-1 z-20;
    }
-}
-.links,
-.authBtns {
-   @apply flex gap-x-4 md:gap-x-5 text-white font-bold text-base md:text-sm;
-   & li {
-      @apply hover:text-slate-200 transition-colors;
-      & button {
-         @apply font-semibold rounded-2xl hover:border-solid border-[rgba(255,255,255,0.1)] hover:border-[#22A75D] border-2 px-9 py-3 lg:hover:scale-[1.075] lg:active:scale-[1.075] transition-all;
+   & .burger {
+      @apply flex sm:hidden items-center justify-center z-20;
+      & svg {
+         @apply pointer-events-none;
       }
    }
 }
-.authBtns {
-   @apply hidden md:flex;
+.navLinks {
+   @apply hidden absolute sm:static top-0 -right-full sm:flex items-center justify-start sm:justify-end lg:justify-between w-full gap-x-6 transition-all;
+   &.activeMenu {
+      @apply z-10 flex flex-col items-end gap-y-7 pr-4 pt-[100px] min-h-screen right-0 bg-[#21263b] overflow-y-scroll overflow-x-hidden;
+      & .links,
+      & .authBtns {
+         @apply flex flex-col items-end text-5xl gap-y-7;
+      }
+   }
+   & .links,
+   & .authBtns {
+      @apply flex gap-x-4 md:gap-x-5 text-white font-bold text-base md:text-sm;
+      & li {
+         @apply hover:text-slate-200 transition-colors;
+      }
+   }
+   .authBtns {
+      @apply flex;
+      & li {
+         & button {
+            @apply font-semibold rounded-2xl border-solid lg:border-[rgba(255,255,255,0.1)] lg:border-2 lg:px-9 lg:py-3 lg:hover:scale-[1.075] transition-all;
+         }
+         &:nth-child(1) button {
+            @apply text-[#{$green-color}] lg:hover:border-[#{$green-color}];
+         }
+         &:nth-child(2) button {
+            @apply text-[#{$yellow-color}] lg:hover:border-[#{$yellow-color}];
+         }
+      }
+   }
 }
