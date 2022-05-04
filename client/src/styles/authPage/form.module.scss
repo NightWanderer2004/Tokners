@@ -1,0 +1,17 @@
+@import '../vars.scss';
+
+.main {
+   @apply text-white;
+   & h4 {
+      @apply font-bold text-center mb-6 lg:mb-10 text-5xl lg:text-6xl;
+   }
+   & form {
+      @apply flex flex-col gap-y-4 lg:max-w-[800px] mx-auto;
+      & input {
+         @apply bg-[#0D0B16] rounded-xl px-3 py-2 text-lg lg:text-xl opacity-[0.72];
+         &:last-child {
+            @apply opacity-100 font-bold transition-transform bg-[#{$blue-color}] lg:hover:scale-[1.075];
+         }
+      }
+   }
+}

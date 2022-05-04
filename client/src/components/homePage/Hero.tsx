@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
             </p>
             <a href='#about'>Learn More</a>
          </div>
-         <img src='/assets/img/home/main-img.png' loading='lazy' alt='MAIN-IMG' />
+         <img src='/assets/img/home/main-img.png' loading='lazy' alt='' />
       </div>
    )
 }

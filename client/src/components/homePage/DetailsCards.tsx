@@ -84,6 +84,7 @@ const DetailsCards: React.FC = () => {
             breakpoints={{
                1024: {
                   enabled: false,
+                  spaceBetween: 0,
                },
             }}
          >

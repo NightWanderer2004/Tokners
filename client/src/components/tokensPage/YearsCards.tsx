@@ -1,6 +1,6 @@
 import React from 'react'
 import useFormat from '../../hooks/useFormat'
-import s from '../../styles/TokensPage/yearsCards.module.scss'
+import s from '../../styles/tokensPage/yearsCards.module.scss'
 
 interface Props {
    year: number

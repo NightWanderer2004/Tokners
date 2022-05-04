@@ -23,7 +23,7 @@
          &:nth-child(1) {
             @apply self-center;
             strong {
-               @apply text-5xl lg:text-8xl text-[#{$yellow-color}];
+               @apply text-[42px] sm:text-5xl lg:text-8xl text-[#{$yellow-color}];
             }
          }
          &:nth-child(2) strong,

@@ -7,7 +7,7 @@
       @apply text-white font-bold text-center text-4xl md:text-5xl mb-5;
    }
    & ul {
-      @apply lg:justify-center;
+      @apply lg:justify-center lg:gap-x-4;
       & li {
          @apply relative flex flex-col items-center text-center bg-white rounded-xl lg:max-w-[400px] py-[75px] lg:py-[90px];
          & h6 {

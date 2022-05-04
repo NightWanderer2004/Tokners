@@ -1,5 +1,5 @@
 import React from 'react'
-import s from '../../styles/TokensPage/hero.module.scss'
+import s from '../../styles/tokensPage/hero.module.scss'
 
 interface Props {
    infoText: string
@@ -7,7 +7,6 @@ interface Props {
 }
 
 const Stats: React.FC<Props> = ({ infoText, tokensAmount }) => {
-   console.log(tokensAmount)
    return (
       <div className={s.statsInfo}>
          <p>{infoText}</p>

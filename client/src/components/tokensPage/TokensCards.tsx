@@ -1,5 +1,5 @@
 import React from 'react'
-import s from '../../styles/TokensPage/tokensCards.module.scss'
+import s from '../../styles/tokensPage/tokensCards.module.scss'
 
 interface Props {
    title: string
@@ -34,7 +34,7 @@ const TokensCards: React.FC = () => {
       <div className={s.main}>
          <ul>
             {cardsInfo.map((el, i) => (
-               <Card title={el.title} tokens={el.tokens} text={el.text ? el.text : ''} />
+               <Card key={i} title={el.title} tokens={el.tokens} text={el.text ? el.text : ''} />
             ))}
          </ul>
       </div>

@@ -1,7 +1,7 @@
 @import '../vars.scss';
 
 .main {
-   @apply pt-12 lg:flex items-start gap-x-5;
+   @apply pt-12 lg:flex items-start justify-center gap-x-5;
    & .section {
       @apply mb-8 lg:mb-0 px-4;
       .icon {
@@ -19,7 +19,7 @@
       }
       ol {
          & li {
-            @apply flex items-start my-3 text-slate-300 text-lg md:text-2xl lg:text-base;
+            @apply flex items-start my-3 text-slate-300 text-lg md:text-2xl lg:text-base lg:w-[260px] 2xl:w-[320px];
             & span {
                @apply mr-2 text-sm md:text-lg font-bold relative top-[3px];
             }
