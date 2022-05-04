@@ -1,0 +1,30 @@
+.main {
+   @apply text-white font-bold mb-10;
+   & h4 {
+      @apply text-3xl lg:text-4xl mb-3;
+   }
+   & ul {
+      @apply lg:justify-center mt-5 lg:mt-10 lg:gap-x-4;
+      & li {
+         @apply bg-[#0D0B16] rounded-2xl p-8 lg:p-10 pb-0 lg:pb-0 flex flex-col items-center lg:max-w-[300px];
+         & h5,
+         & h6 {
+            @apply self-start;
+         }
+         & h5 {
+            @apply text-lg;
+         }
+         & h6 {
+            @apply text-sm font-normal;
+         }
+         & img {
+            @apply mt-5;
+         }
+      }
+   }
+}
+@media screen and (min-width: 1024px) {
+   ul {
+      transform: none !important;
+   }
+}
