@@ -1,19 +1,20 @@
 const express = require('express')
-const cors = require('cors')
+const mongoose = require('mongoose')
+
+const users = require('./routes/api/user')
+const db = 'mongodb://localhost:27017/my_DB'
+
 const app = express()
-
+// app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-app.use(cors())
 
-const test = {
-   text: 'asd',
-   number: 3,
-}
-app.get('/api', (req, res) => {
-   res.send(test)
-})
+app.use('/api/users', users)
 
-app.listen(1234, () => {
-   console.log('Server running at: http://localhost:1234')
+mongoose
+   .connect(db)
+   .then(console.log('Connected'))
+   .catch(err => console.error(err))
+
+app.listen(5000, () => {
+   console.log('Server running at: http://127.0.0.1:5000')
 })
