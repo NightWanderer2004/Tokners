@@ -16,6 +16,6 @@
       }
    }
    & img {
-      @apply scale-[2] md:scale-[4.5] lg:scale-[3.5] xl:scale-[2.5] -z-10 relative -right-5 md:-right-20 lg:-right-32 xl:top-14 w-full;
+      @apply scale-[2] md:scale-[4.5] lg:scale-[3.5] xl:scale-[2.5] -z-10 relative -right-5 md:-right-20 lg:-right-32 xl:top-14 w-[540px] sm:w-[515px] md:w-[200px] lg:w-[300px] xl:w-[475px] 2xl:w-[600px];
    }
 }

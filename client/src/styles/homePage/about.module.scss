@@ -2,7 +2,7 @@
    @apply md:flex lg:max-h-[550px] md:my-12;
    & img {
       transform: rotateY(180deg);
-      @apply w-full md:object-right-top md:object-cover md:hidden lg:block 2xl:hidden;
+      @apply lg:w-[300px] md:object-right-top md:object-cover md:hidden lg:block 2xl:hidden;
    }
 }
 @media screen and (min-width: 768px) {
@@ -11,12 +11,12 @@
    }
 }
 .infoText {
-   @apply relative bg-white rounded-tr-[175px] md:rounded-tr-[0] 2xl:rounded-tr-[50px] md:rounded-tl-[250px] 2xl:rounded-br-[250px] 2xl:rounded-bl-[50px] py-[70px] md:pt-48 md:pb-28 px-5 md:pl-28 2xl:pr-28 -z-20 2xl:w-full 2xl:container mx-auto;
+   @apply relative bg-white rounded-tr-[175px] md:rounded-tr-[0] 2xl:rounded-tr-[50px] md:rounded-tl-[250px] 2xl:rounded-br-[250px] 2xl:rounded-bl-[50px] py-[70px] md:pt-48 md:pb-8 px-5 md:pl-28 2xl:pr-28 -z-20 2xl:w-full 2xl:container mx-auto;
    & h6 {
-      @apply hidden md:block absolute top-0 right-0 text-[150px] lg:text-[170px] xl:text-[195px] text-slate-50 font-bold -z-10 pointer-events-none;
+      @apply hidden md:block absolute top-0 right-0 text-[150px] lg:text-[170px] xl:text-[185px] text-slate-50 font-bold -z-10 pointer-events-none;
    }
    & h5 {
-      @apply text-4xl md:text-5xl font-bold w-[250px] md:w-full;
+      @apply text-4xl md:text-5xl font-bold w-[250px] md:w-full mt-6;
    }
    & span,
    & p {
