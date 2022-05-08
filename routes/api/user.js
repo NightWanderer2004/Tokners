@@ -1,10 +1,9 @@
+require('dotenv').config()
 const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const User = require('../../models/User')
-const { route } = require('express/lib/router')
-const res = require('express/lib/response')
 
 const hashPassword = newUser => {
    bcrypt.genSalt((err, salt) => {
@@ -25,7 +24,11 @@ const login = user => {
       id: user.id,
       name: user.name,
    }
-   jwt.sign(payload, 'key', (err, token) => res.json({ success: true, token: 'Bearer ' + token }))
+
+   jwt.sign(payload, process.env.ACCESS_TOKEN_KEY, (err, token) => {
+      if (err) console.error(err)
+      else res.json({ success: true, token: 'Bearer ' + token })
+   })
 }
 
 router.post('/register', (req, res) => {
