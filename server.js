@@ -5,7 +5,6 @@ const users = require('./routes/api/user')
 const db = 'mongodb://localhost:27017/my_DB'
 
 const app = express()
-// app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.use('/api/users', users)
