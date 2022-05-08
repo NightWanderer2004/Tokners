@@ -5,7 +5,7 @@ import setAuthToken from '../utils/setAuthToken'
 
 interface User {
    login: string
-   email: string
+   email?: string
    password: string
 }
 interface DispatchArgs {

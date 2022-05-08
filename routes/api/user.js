@@ -19,7 +19,7 @@ const hashPassword = newUser => {
       }
    })
 }
-const login = user => {
+const loginUser = user => {
    const payload = {
       id: user.id,
       name: user.name,
@@ -50,6 +50,7 @@ router.post('/register', (req, res) => {
    })
 })
 router.post('/login', (req, res) => {
+   const { login, password } = req.body
    User.findOne({ login }).then(user => {
       if (!user)
          res.status(400).json({
@@ -57,7 +58,7 @@ router.post('/login', (req, res) => {
          })
       else
          bcrypt.compare(password, user.password).then(isMatch => {
-            if (isMatch) login(user)
+            if (isMatch) loginUser(user, res)
          })
    })
 })
