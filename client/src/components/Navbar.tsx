@@ -52,10 +52,10 @@ const Navbar: React.FC = () => {
                         <Link to='/tokens'>Tokens</Link>
                      </li>
                   </ul>
-                  {width > 640 || width < 1024 ? (
-                     ''
-                  ) : (
+                  {width > 640 && width < 1024 ? (
                      <div className='text-white font-bold pointer-events-none'>|</div>
+                  ) : (
+                     ''
                   )}
                   <AuthBtns clickHandler={linksClickHandler} />
                </li>
