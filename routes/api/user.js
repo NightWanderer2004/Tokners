@@ -32,12 +32,12 @@ const loginUser = user => {
 }
 
 router.post('/register', (req, res) => {
+   const errors = {}
    User.findOne({ login: req.body.login }).then(user => {
-      if (user)
-         res.status(400).json({
-            login: 'User is already exist',
-         })
-      else
+      if (user) {
+         errors.login = 'Login is already exist'
+         res.status(400).json(errors)
+      } else
          res.status(200).send(
             hashPassword(
                new User({
