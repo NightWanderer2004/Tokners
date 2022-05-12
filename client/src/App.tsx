@@ -15,7 +15,7 @@ const App: React.FC = () => {
    return (
       <Provider store={store}>
          <BrowserRouter>
-            <div className='wrapper flex flex-col tracking-wide'>
+            <div className='overflow-hidden min-h-screen flex flex-col tracking-wide'>
                <Navbar />
                <Routes>
                   <Route path='/' element={<Home />} />
