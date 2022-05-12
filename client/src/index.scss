@@ -46,7 +46,3 @@ body {
    @apply w-full h-full pointer-events-none -z-20 absolute bottom-0 right-0 hidden md:block md:bg-full bg-right-bottom bg-no-repeat;
    background-image: url('../public/assets/img/home/bg-bottom.png');
 }
-.wrapper {
-   min-height: 100vh;
-   overflow: hidden;
-}
