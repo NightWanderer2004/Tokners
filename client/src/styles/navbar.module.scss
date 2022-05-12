@@ -13,9 +13,9 @@
    }
 }
 .navLinks {
-   @apply absolute sm:static top-0 -right-full flex flex-col sm:flex-row items-end sm:items-center justify-start sm:justify-end lg:justify-between w-full min-h-screen sm:min-h-full gap-x-6 gap-y-7 pr-4 sm:pr-0 pt-[100px] sm:pt-0 transition-all;
+   @apply hidden sm:flex absolute sm:static top-0 right-0 z-10 bg-[#21263b] sm:bg-transparent overflow-y-scroll overflow-x-hidden flex-col sm:flex-row items-end sm:items-center justify-start sm:justify-end lg:justify-between w-full min-h-screen sm:min-h-full gap-x-6 gap-y-7 pr-4 sm:pr-0 pt-[100px] sm:pt-0;
    &.activeMenu {
-      @apply z-10 right-0 bg-[#21263b] overflow-y-scroll overflow-x-hidden;
+      @apply flex;
    }
    & .links,
    & .authBtns {
