@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
+import { setCurrentUser } from './actions/authActions'
+import jwtDecode from 'jwt-decode'
+import setAuthToken from './utils/setAuthToken'
 
 import Footer from './components/Footer'
 import Login from './components/authPage/Login'
@@ -15,6 +18,14 @@ import PrivateRoute from './components/PrivateRoute'
 import Error404 from './pages/Error404'
 
 const App: React.FC = () => {
+   useEffect(() => {
+      if (localStorage.jwtToken) {
+         setAuthToken(localStorage.jwtToken)
+         const decoded = jwtDecode(localStorage.jwtToken)
+         store.dispatch(setCurrentUser(decoded))
+      }
+   }, [])
+
    return (
       <Provider store={store}>
          <BrowserRouter>
