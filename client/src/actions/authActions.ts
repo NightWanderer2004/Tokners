@@ -46,4 +46,8 @@ export const loginUser = (userData: User) => (dispatch: (arg: DispatchArgs) => v
             payload: err.response.data,
          })
       )
+export const logoutUser = () => (dispatch: (arg: DispatchArgs) => void) => {
+   localStorage.removeItem('jwtToken')
+   setAuthToken(false)
+   dispatch(setCurrentUser({}))
 }
