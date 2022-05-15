@@ -13,39 +13,46 @@ interface DispatchArgs {
    payload?: any
 }
 
-export const registerUser = (userData: User) => (dispatch: (arg: DispatchArgs) => void) => {
-   axios
-      .post('/api/users/register', userData)
-      .then(() => dispatch({ type: CLEAR_ERRORS }))
-      .catch(err =>
-         dispatch({
-            type: GET_ERRORS,
-            payload: err.response.data,
+export const registerUser =
+   (userData: User, navigate: any) => (dispatch: (arg: DispatchArgs) => void) => {
+      axios
+         .post('/api/users/register', userData)
+         .then(() => dispatch({ type: CLEAR_ERRORS }))
+         .then(() => navigate('/login'))
+         .catch(err =>
+            dispatch({
+               type: GET_ERRORS,
+               payload: err.response.data,
+            })
+         )
+   }
+export const loginUser =
+   (userData: User, navigate: any) => (dispatch: (arg: DispatchArgs) => void) => {
+      axios
+         .post('/api/users/login', userData)
+         .then(res => {
+            const token: string = res.data.token
+            const decoded: string = jwtDecode(token)
+
+            localStorage.setItem('jwtToken', token)
+            setAuthToken(token)
+
+            dispatch(setCurrentUser(decoded))
          })
-      )
+         .then(() => dispatch({ type: CLEAR_ERRORS }))
+         .catch(err =>
+            dispatch({
+               type: GET_ERRORS,
+               payload: err.response.data,
+            })
+         )
+   }
+export const setCurrentUser = (decoded: any) => {
+   return {
+      type: SET_CURRENT_USER,
+      payload: decoded,
+   }
 }
-export const loginUser = (userData: User) => (dispatch: (arg: DispatchArgs) => void) => {
-   axios
-      .post('/api/users/login', userData)
-      .then(res => {
-         const token: string = res.data.token
-         const decoded: string = jwtDecode(token)
-
-         localStorage.setItem('jwtToken', token)
-         setAuthToken(token)
-
-         dispatch({
-            type: SET_CURRENT_USER,
-            payload: decoded,
-         })
-      })
-      .then(() => dispatch({ type: CLEAR_ERRORS }))
-      .catch(err =>
-         dispatch({
-            type: GET_ERRORS,
-            payload: err.response.data,
-         })
-      )
 export const logoutUser = () => (dispatch: (arg: DispatchArgs) => void) => {
    localStorage.removeItem('jwtToken')
    setAuthToken(false)
