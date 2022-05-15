@@ -1,9 +1,11 @@
+require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const passport = require('passport')
 
 const users = require('./routes/api/user')
-const db = 'mongodb://localhost:27017/my_DB'
+const db = process.env.MONGO_URL
+const port = process.env.PORT || 5000
 
 const app = express()
 app.use(express.json())
@@ -18,6 +20,6 @@ mongoose
    .then(console.log('Connected'))
    .catch(err => console.error(err))
 
-app.listen(5000, () => {
+app.listen(port, () => {
    console.log('Server running at: http://127.0.0.1:5000')
 })
