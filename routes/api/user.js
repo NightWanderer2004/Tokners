@@ -4,6 +4,7 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const User = require('../../models/User')
+const passport = require('passport')
 
 const hashPassword = newUser => {
    bcrypt.genSalt((err, salt) => {
@@ -60,6 +61,11 @@ router.post('/login', (req, res) => {
          bcrypt.compare(password, user.password).then(isMatch => {
             if (isMatch) loginUser(user, res)
          })
+router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
+   res.json({
+      id: req.user.id,
+      login: req.user.login,
+      email: req.user.email,
    })
 })
 
