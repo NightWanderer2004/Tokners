@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import Auth from './Auth'
+import Auth from '../../pages/Auth'
 import { registerUser } from '../../actions/authActions'
 import s from '../../styles/authPage/form.module.scss'
 
 const Register: React.FC = () => {
    const errors = useSelector((state: any) => state.errors)
-
    const dispatch = useDispatch()
+   const navigate = useNavigate()
 
    const [login, setLogin] = useState('')
    const [password, setPassword] = useState('')
@@ -21,16 +22,15 @@ const Register: React.FC = () => {
          password,
       }
 
-      dispatch(registerUser(newUser) as any)
-      // setLogin('')
-      // setEmail('')
-      // setPassword('')
+      dispatch(registerUser(newUser, navigate) as any)
    }
+
    useEffect(() => {
       return () => {
          dispatch({ type: 'CLEAR_ERRORS' })
       }
    }, [dispatch])
+
    return (
       <Auth>
          <h4>Sign Up</h4>
@@ -42,25 +42,26 @@ const Register: React.FC = () => {
                placeholder='login:'
                value={login}
                onChange={e => setLogin(e.target.value)}
-               required
             />
             {errors.login ? <span className={s.error}>{errors.login}</span> : ''}
             <input
+               className={errors.email ? s.invalid : ''}
                type='email'
                name='email'
                placeholder='email:'
                value={email}
                onChange={e => setEmail(e.target.value)}
-               required
             />
+            {errors.email ? <span className={s.error}>{errors.email}</span> : ''}
             <input
+               className={errors.password ? s.invalid : ''}
                type='password'
                name='password'
                placeholder='password:'
                value={password}
                onChange={e => setPassword(e.target.value)}
-               required
             />
+            {errors.password ? <span className={s.error}>{errors.password}</span> : ''}
             <input type='submit' value='Register' />
          </form>
       </Auth>
