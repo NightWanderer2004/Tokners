@@ -10,7 +10,9 @@ import Register from './components/authPage/Register'
 import Home from './pages/Home'
 import Team from './pages/Team'
 import Tokens from './pages/Tokens'
+import Profile from './pages/Profile'
 import PrivateRoute from './components/PrivateRoute'
+import Error404 from './pages/Error404'
 
 const App: React.FC = () => {
    return (
@@ -19,6 +21,7 @@ const App: React.FC = () => {
             <div className='overflow-hidden min-h-screen flex flex-col tracking-wide'>
                <Navbar />
                <Routes>
+                  <Route path='*' element={<Error404 />} />
                   <Route path='/' element={<Home />} />
                   <Route path='/tokens' element={<Tokens />} />
                   <Route path='/team' element={<Team />} />
