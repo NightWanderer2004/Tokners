@@ -10,6 +10,7 @@ import Register from './components/authPage/Register'
 import Home from './pages/Home'
 import Team from './pages/Team'
 import Tokens from './pages/Tokens'
+import PrivateRoute from './components/PrivateRoute'
 
 const App: React.FC = () => {
    return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                   <Route path='/team' element={<Team />} />
                   <Route path='/login' element={<Login />} />
                   <Route path='/register' element={<Register />} />
+                  <Route path='/profile' element={<PrivateRoute component={<Profile />} />} />
                </Routes>
                <Footer />
                <div className='bottomBg'></div>
