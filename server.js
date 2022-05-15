@@ -9,7 +9,11 @@ const port = process.env.PORT || 5000
 
 const app = express()
 app.use(express.json())
+
 app.use(express.static(path.resolve(__dirname, './client/build')))
+app.get('*', (req, res) => {
+   res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
+})
 
 app.use(passport.initialize())
 require('./config/passport')(passport)
