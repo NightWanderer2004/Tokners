@@ -31,10 +31,10 @@
             @apply font-semibold rounded-2xl border-solid lg:border-[rgba(255,255,255,0.1)] lg:border-2 lg:px-9 lg:py-3 lg:hover:scale-[1.075] transition-all;
          }
          &:nth-child(1) button {
-            @apply text-[#{$green-color}] lg:hover:border-[#{$green-color}];
+            @apply text-[#{$green-color}] lg:hover:border-[#{$green-color}] opacity-100;
          }
          &:nth-child(2) button {
-            @apply text-[#{$yellow-color}] lg:hover:border-[#{$yellow-color}];
+            @apply text-[#{$yellow-color}] lg:hover:border-[#{$yellow-color}] opacity-100;
          }
       }
    }

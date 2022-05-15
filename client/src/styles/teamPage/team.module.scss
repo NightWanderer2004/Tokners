@@ -6,7 +6,7 @@
    & ul {
       @apply lg:justify-center mt-5 lg:mt-10 lg:gap-x-4;
       & li {
-         @apply bg-[#0D0B16] rounded-2xl p-8 lg:p-10 pb-0 lg:pb-0 flex flex-col items-center lg:max-w-[300px];
+         @apply bg-[#0D0B16] rounded-2xl p-8 lg:p-10 pb-0 lg:pb-0 lg:max-w-[300px] flex flex-col items-center;
          & h5,
          & h6 {
             @apply self-start;

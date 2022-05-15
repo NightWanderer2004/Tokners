@@ -1,7 +1,7 @@
 @import '../vars.scss';
 
 .main {
-   background-image: url('../../../public/assets/img/home/part2-mobile.png');
+   background-image: url(../../../public/assets/img/home/part2-mobile.png);
    @apply mt-[45px] pt-[130px] lg:pt-[245px] pb-[150px] bg-no-repeat bg-center bg-full 2xl:container mx-auto;
    & h3 {
       @apply text-white font-bold text-center text-4xl md:text-5xl mb-5;
@@ -9,24 +9,24 @@
    & ul {
       @apply lg:justify-center lg:gap-x-4;
       & li {
-         @apply relative flex flex-col items-center text-center bg-white rounded-xl lg:max-w-[400px] py-[75px] lg:py-[90px];
+         @apply relative flex flex-col items-center text-center bg-white lg:max-w-[400px] py-[75px] lg:py-[90px] rounded-xl;
          & h6 {
             @apply text-slate-50 text-[220px] lg:text-[280px] font-bold absolute -top-5 z-10;
          }
          &:nth-child(1) .icon {
-            @apply bg-[#{$green-color}];
-            @include fill($green-color, 1);
+            background-color: $green-color;
+            @include fill($green-color, 8);
          }
          &:nth-child(2) {
             @apply relative lg:top-12;
             & .icon {
-               @apply bg-[#{$blue-color}];
-               @include fill($blue-color, 1);
+               background-color: $blue-color;
+               @include fill($blue-color, 8);
             }
          }
          &:nth-child(3) .icon {
-            @apply bg-[#{$yellow-color}];
-            @include fill($yellow-color, 1);
+            background-color: $yellow-color;
+            @include fill($yellow-color, 8);
          }
       }
    }

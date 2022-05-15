@@ -9,11 +9,11 @@
       @apply flex flex-col gap-y-4 lg:max-w-[800px] mx-auto;
       & input {
          &.invalid {
-            @apply border-2 border-[#{$red-color}];
+            @apply border-[#{$red-color}] border-2;
          }
-         @apply bg-[#0D0B16] rounded-xl px-3 py-2 text-lg lg:text-xl opacity-[0.72];
+         @apply bg-[#0D0B16] px-3 py-2 text-lg lg:text-xl opacity-[0.72] rounded-xl;
          &:last-child {
-            @apply opacity-100 font-bold transition-transform bg-[#{$blue-color}] lg:hover:scale-[1.075];
+            @apply opacity-100 font-bold bg-[#{$blue-color}] lg:hover:scale-[1.075] transition-transform;
          }
       }
       & .error {

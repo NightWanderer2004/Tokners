@@ -4,5 +4,7 @@ $yellow-color: #ffd100;
 $red-color: #e20613;
 
 @mixin fill($color, $blackout) {
-   @apply bg-[#{$color}] shadow-[0_11px_23px_0_#{$color / $blackout}];
+   $shadow-color: darken($color, $blackout);
+   background-color: $color;
+   box-shadow: 0 11px 23px 0 $shadow-color;
 }

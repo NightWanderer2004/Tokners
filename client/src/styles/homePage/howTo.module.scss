@@ -14,22 +14,22 @@
          }
          &:nth-child(2) {
             & svg path {
-               @apply stroke-[#{$green-color}];
+               stroke: $green-color;
             }
          }
          &:nth-child(4) {
             & svg path {
-               @apply stroke-[#{$yellow-color}];
+               stroke: $yellow-color;
             }
          }
          &:nth-child(2) svg path {
-            @apply stroke-[#{$green-color}];
+            stroke: $green-color;
          }
       }
       & .card {
          @apply bg-[#171B29] rounded-2xl px-6 lg:px-16 py-8 lg:py-12 text-white relative -z-10;
          &:nth-child(3) {
-            @apply relative lg:top-[35px];
+            @apply lg:top-[35px] relative;
          }
          & span {
             @apply text-slate-600 lg:absolute top-5 left-5;

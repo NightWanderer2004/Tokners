@@ -7,7 +7,7 @@
       .icon {
          @apply flex items-end gap-x-3 mb-5 lg:mb-8;
          & div {
-            @apply w-[82px] h-[82px] flex items-center justify-center font-bold text-2xl rounded-[100%] rounded-bl-[60%];
+            @apply w-[82px] h-[82px] flex items-center justify-center rounded-[100%] rounded-bl-[60%] font-bold text-2xl;
          }
          & span {
             &::after {
@@ -19,9 +19,9 @@
       }
       ol {
          & li {
-            @apply flex items-start my-3 text-slate-300 text-lg md:text-2xl lg:text-base lg:w-[260px] 2xl:w-[320px];
+            @apply flex items-start text-slate-300 text-lg md:text-2xl lg:text-base lg:w-[260px] 2xl:w-[320px] my-3;
             & span {
-               @apply mr-2 text-sm md:text-lg font-bold relative top-[3px];
+               @apply text-sm md:text-lg font-bold relative top-[3px] mr-2;
             }
          }
       }
@@ -29,47 +29,47 @@
    & .section {
       &:nth-child(1) {
          & .icon span::after {
-            @apply bg-[#{$green-color}];
+            background-color: $green-color;
          }
          & .icon div {
-            @include fill($green-color, 2.5);
+            @include fill($green-color, 25);
          }
          & ol li span {
-            @apply text-[#{$green-color}];
+            color: $green-color;
          }
       }
       &:nth-child(2) {
          & .icon span::after {
-            @apply bg-[#{$blue-color}];
+            background-color: $blue-color;
          }
          & .icon div {
-            @include fill($blue-color, 2.5);
+            @include fill($blue-color, 25);
          }
          & ol li span {
-            @apply text-[#{$blue-color}];
+            color: $blue-color;
          }
       }
 
       &:nth-child(3) {
          & .icon span::after {
-            @apply bg-[#{$yellow-color}];
+            background-color: $yellow-color;
          }
          & .icon div {
-            @include fill($yellow-color, 2.5);
+            @include fill($yellow-color, 25);
          }
          & ol li span {
-            @apply text-[#{$yellow-color}];
+            color: $yellow-color;
          }
       }
       &:nth-child(4) {
          & .icon span::after {
-            @apply bg-[#{$red-color}];
+            background-color: $red-color;
          }
          & .icon div {
-            @include fill($red-color, 2.5);
+            @include fill($red-color, 25);
          }
          & ol li span {
-            @apply text-[#{$red-color}];
+            color: $red-color;
          }
       }
    }

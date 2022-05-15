@@ -1,15 +1,15 @@
 @import '../vars.scss';
 
 .main {
-   @apply py-[50px] lg:py-[100px] font-bold text-white lg:max-h-[900px];
+   @apply py-[50px] lg:py-[100px] lg:max-h-[900px] font-bold text-white;
    & h4 {
-      @apply text-3xl lg:text-4xl mb-3 max-w-[500px];
+      @apply text-3xl lg:text-4xl max-w-[500px] mb-3;
    }
    & img {
       @apply mt-12 md:mt-20 lg:mt-0 scale-[1.4] lg:scale-[0.7] 2xl:scale-100 mx-auto block relative lg:bottom-[370px] 2xl:bottom-[260px] -z-10;
    }
    & .stats {
-      @apply flex flex-col gap-y-4 lg:gap-y-8 items-start lg:mt-[55px];
+      @apply flex flex-col gap-y-4 lg:gap-y-8 lg:mt-[55px] items-start;
       &Info {
          & p {
             @apply text-base lg:text-2xl max-w-[250px] lg:max-w-full;
@@ -23,7 +23,7 @@
          &:nth-child(1) {
             @apply self-center;
             strong {
-               @apply text-[42px] sm:text-5xl lg:text-8xl text-[#{$yellow-color}];
+               @apply text-[#{$yellow-color}] text-[42px] sm:text-5xl lg:text-8xl;
             }
          }
          &:nth-child(2) strong,
@@ -33,13 +33,13 @@
          &:nth-child(2) {
             @apply self-end lg:self-start;
             & strong {
-               @apply text-[#{$blue-color}];
+               color: $blue-color;
             }
          }
          &:nth-child(3) {
             @apply lg:self-end;
             strong {
-               @apply text-[#{$red-color}];
+               color: $red-color;
             }
          }
       }

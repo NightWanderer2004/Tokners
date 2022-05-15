@@ -7,7 +7,7 @@
       & header {
          @apply mb-2 flex items-end gap-x-2 font-bold text-xs lg:text-sm;
          & .icon {
-            @apply w-[22px] h-[22px] rounded-[100%] rounded-bl-[60%];
+            @apply w-[22px] h-[22px] rounded-[100%] rounded-bl-[60%] opacity-100;
          }
       }
       & h6 {
@@ -23,27 +23,27 @@
          }
       }
       &:nth-child(4n - 3) header {
-         @apply text-[#{$green-color}];
+         color: $green-color;
          & .icon {
-            @include fill($green-color, 2);
+            @include fill($green-color, 20);
          }
       }
       &:nth-child(4n - 2) header {
-         @apply text-[#{$yellow-color}];
+         color: $yellow-color;
          & .icon {
-            @include fill($yellow-color, 2);
+            @include fill($yellow-color, 20);
          }
       }
       &:nth-child(4n - 1) header {
-         @apply text-[#{$blue-color}];
+         color: $blue-color;
          & .icon {
-            @include fill($blue-color, 2);
+            @include fill($blue-color, 20);
          }
       }
       &:nth-child(4n) header {
-         @apply text-[#{$red-color}];
+         color: $red-color;
          & .icon {
-            @include fill($red-color, 2);
+            @include fill($red-color, 20);
          }
       }
    }

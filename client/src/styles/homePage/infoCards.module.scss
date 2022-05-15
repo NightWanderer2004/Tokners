@@ -3,24 +3,26 @@
 .main {
    @apply pt-32 pb-24 md:flex gap-x-3;
    & .card {
-      @apply rounded-xl bg-[#171B29] my-2 p-[30px] flex-[0_50%_100%];
+      @apply bg-[#171B29] my-2 p-[30px] flex-[0_50%_100%] rounded-xl;
       &:nth-child(1) {
          & .image {
-            @include fill($green-color, 2);
+            @include fill($green-color, 20);
          }
          & h3 span {
-            @apply text-[#{$green-color}] border-[#{$green-color}];
+            color: $green-color;
+            border-color: $green-color;
          }
-         @apply md:relative -top-[40px];
+         @apply -top-[40px] md:relative;
       }
       &:nth-child(2) {
          & .image {
-            @include fill($blue-color, 2);
+            @include fill($blue-color, 20);
          }
          & h3 span {
-            @apply text-[#{$blue-color}] border-[#{$blue-color}];
+            color: $blue-color;
+            border-color: $blue-color;
          }
-         @apply md:relative -bottom-[40px];
+         @apply -bottom-[40px] md:relative;
       }
       & .image {
          @apply rounded-full w-[70px] h-[70px] flex items-center justify-center;
@@ -32,7 +34,7 @@
          }
       }
       & p {
-         @apply text-base text-white opacity-[0.55];
+         @apply text-base text-white/50;
       }
    }
 }
