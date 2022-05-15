@@ -6,20 +6,9 @@ const jwt = require('jsonwebtoken')
 const User = require('../../models/User')
 const passport = require('passport')
 
-const hashPassword = newUser => {
-   bcrypt.genSalt((err, salt) => {
-      if (err) console.error(err)
-      else {
-         bcrypt.hash(newUser.password, salt, (err, hash) => {
-            if (err) console.error(err)
-            else {
-               newUser.password = hash
-               newUser.save().catch(err => console.error(err))
-            }
-         })
-      }
-   })
-}
+const validateRegisterInput = require('../../validation/register')
+const validateLoginInput = require('../../validation/login')
+
 const loginUser = user => {
    const payload = {
       id: user.id,
@@ -33,34 +22,66 @@ const loginUser = user => {
 }
 
 router.post('/register', (req, res) => {
-   const errors = {}
-   User.findOne({ login: req.body.login }).then(user => {
-      if (user) {
-         errors.login = 'Login is already exist'
-         res.status(400).json(errors)
-      } else
-         res.status(200).send(
-            hashPassword(
-               new User({
-                  login: req.body.login,
-                  email: req.body.email,
-                  password: req.body.password,
+   const { errors, isValid } = validateRegisterInput(req.body)
+
+   if (!isValid) res.status(400).json(errors)
+   else {
+      User.findOne({ login: req.body.login }).then(user => {
+         if (user) {
+            errors.login = 'Login is already exist'
+            res.status(400).json(errors)
+         } else {
+            const newUser = new User({
+               login: req.body.login,
+               email: req.body.email,
+               password: req.body.password,
+            })
+            bcrypt.genSalt((err, salt) => {
+               bcrypt.hash(newUser.password, salt, (err, hash) => {
+                  if (err) console.error(err)
+                  else {
+                     newUser.password = hash
+                     newUser
+                        .save()
+                        .then(user => res.json(user))
+                        .catch(err => console.error(err._message))
+                  }
                })
-            )
-         )
-   })
+            })
+         }
+      })
+   }
 })
 router.post('/login', (req, res) => {
-   const { login, password } = req.body
-   User.findOne({ login }).then(user => {
-      if (!user)
-         res.status(400).json({
-            login: 'User not found',
-         })
-      else
-         bcrypt.compare(password, user.password).then(isMatch => {
-            if (isMatch) loginUser(user, res)
-         })
+   const { errors, isValid } = validateLoginInput(req.body)
+
+   if (!isValid) res.status(400).json(errors)
+   else {
+      const { login, password } = req.body
+      User.findOne({ login }).then(user => {
+         if (!user) {
+            errors.login = 'User not found'
+            res.status(400).json(errors)
+         } else
+            bcrypt.compare(password, user.password).then(isMatch => {
+               if (isMatch) {
+                  const payload = {
+                     id: user.id,
+                     login: user.login,
+                  }
+
+                  jwt.sign(payload, process.env.ACCESS_TOKEN_KEY, (err, token) => {
+                     if (err) console.error(err)
+                     else res.json({ success: true, token: 'Bearer ' + token })
+                  })
+               } else {
+                  errors.password = 'Password incorrect'
+                  res.status(400).json(errors)
+               }
+            })
+      })
+   }
+})
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
    res.json({
       id: req.user.id,
