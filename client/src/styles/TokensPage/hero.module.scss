@@ -31,13 +31,13 @@
          &:nth-child(2) {
             @apply self-end lg:self-start;
             & strong {
-               // @apply text-Blue;
+               @apply text-Blue;
             }
          }
          &:nth-child(3) {
             @apply lg:self-end;
             strong {
-               // @apply text-Red;
+               @apply text-Red;
             }
          }
       }
