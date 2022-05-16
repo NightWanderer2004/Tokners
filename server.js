@@ -1,16 +1,24 @@
 require('dotenv').config()
+const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose')
 const passport = require('passport')
+const cors = require('cors')
 
 const users = require('./routes/api/user')
 const db = process.env.MONGO_URL
-const port = process.env.PORT || 5000
+const port = process.env.PORT
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
-if (process.env.NODE_ENV === 'production') app.use(express.static('/client/build'))
+if (process.env.NODE_ENV === 'production') {
+   app.use(express.static(path.join(__dirname, '/client/build')))
+   app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+   })
+}
 
 app.use(passport.initialize())
 require('./config/passport')(passport)
