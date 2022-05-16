@@ -1,5 +1,5 @@
 .main {
-   background-image: url(/assets/img/home/part2-mobile.png);
+   background-image: url(../../../public/assets/img/home/part2-mobile.png);
    @apply mt-[45px] pt-[130px] lg:pt-[100px] pb-[130px] bg-no-repeat bg-center bg-full 2xl:container mx-auto;
    & ul {
       @apply container mx-auto px-2 flex flex-col items-center gap-y-5 lg:gap-y-8;
@@ -40,6 +40,6 @@
 }
 @media screen and (min-width: 1024px) {
    .main {
-      background-image: url(/assets/img/home/part2.pngs);
+      background-image: url(../../../public/assets/img/home/part2.pngs);
    }
 }
