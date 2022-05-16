@@ -1,43 +1,43 @@
 .main {
-   @apply py-[50px] lg:py-[100px] lg:max-h-[900px] font-bold text-white;
+   // @apply py-[50px] lg:py-[100px] lg:max-h-[900px] font-bold text-white;
    & h4 {
-      @apply text-3xl lg:text-4xl max-w-[500px] mb-3;
+      // @apply text-3xl lg:text-4xl max-w-[500px] mb-3;
    }
    & img {
-      @apply mt-12 md:mt-20 lg:mt-0 scale-[1.4] lg:scale-[0.7] 2xl:scale-100 mx-auto block relative lg:bottom-[370px] 2xl:bottom-[260px] -z-10;
+      // @apply mt-12 md:mt-20 lg:mt-0 scale-[1.4] lg:scale-[0.7] 2xl:scale-100 mx-auto block relative lg:bottom-[370px] 2xl:bottom-[260px] -z-10;
    }
    & .stats {
-      @apply flex flex-col gap-y-4 lg:gap-y-8 lg:mt-[55px] items-start;
+      // @apply flex flex-col gap-y-4 lg:gap-y-8 lg:mt-[55px] items-start;
       &Info {
          & p {
-            @apply text-base lg:text-2xl max-w-[250px] lg:max-w-full;
+            // @apply text-base lg:text-2xl max-w-[250px] lg:max-w-full;
          }
          & strong {
-            @apply block my-1;
+            // @apply block my-1;
          }
          & span {
-            @apply text-right block;
+            // @apply text-right block;
          }
          &:nth-child(1) {
-            @apply self-center;
+            // @apply self-center;
             strong {
-               @apply text-Yellow text-[42px] sm:text-5xl lg:text-8xl;
+               // @apply text-Yellow text-[42px] sm:text-5xl lg:text-8xl;
             }
          }
          &:nth-child(2) strong,
          &:nth-child(3) strong {
-            @apply text-4xl lg:text-5xl;
+            // @apply text-4xl lg:text-5xl;
          }
          &:nth-child(2) {
-            @apply self-end lg:self-start;
+            // @apply self-end lg:self-start;
             & strong {
-               @apply text-Blue;
+               // @apply text-Blue;
             }
          }
          &:nth-child(3) {
-            @apply lg:self-end;
+            // @apply lg:self-end;
             strong {
-               @apply text-Red;
+               // @apply text-Red;
             }
          }
       }
