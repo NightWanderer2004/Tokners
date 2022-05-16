@@ -1,5 +1,3 @@
-@import '../vars.scss';
-
 .main {
    background-image: url(../../../public/assets/img/home/part2-mobile.png);
    @apply mt-[45px] pt-[130px] lg:pt-[245px] pb-[150px] bg-no-repeat bg-center bg-full 2xl:container mx-auto;
@@ -14,19 +12,16 @@
             @apply text-slate-50 text-[220px] lg:text-[280px] font-bold absolute -top-5 z-10;
          }
          &:nth-child(1) .icon {
-            background-color: $green-color;
-            @include fill($green-color, 8);
+            @apply bg-Green;
          }
          &:nth-child(2) {
             @apply relative lg:top-12;
             & .icon {
-               background-color: $blue-color;
-               @include fill($blue-color, 8);
+               @apply bg-Blue;
             }
          }
          &:nth-child(3) .icon {
-            background-color: $yellow-color;
-            @include fill($yellow-color, 8);
+            @apply bg-Yellow;
          }
       }
    }

@@ -1,5 +1,3 @@
-@import '../vars.scss';
-
 .main {
    @apply pt-12 lg:flex items-start justify-center gap-x-5;
    & .section {
@@ -29,47 +27,47 @@
    & .section {
       &:nth-child(1) {
          & .icon span::after {
-            background-color: $green-color;
+            @apply bg-Green;
          }
          & .icon div {
-            @include fill($green-color, 25);
+            @apply bg-Green;
          }
          & ol li span {
-            color: $green-color;
+            @apply text-Green;
          }
       }
       &:nth-child(2) {
          & .icon span::after {
-            background-color: $blue-color;
+            @apply bg-Blue;
          }
          & .icon div {
-            @include fill($blue-color, 25);
+            @apply bg-Blue;
          }
          & ol li span {
-            color: $blue-color;
+            @apply text-Blue;
          }
       }
 
       &:nth-child(3) {
          & .icon span::after {
-            background-color: $yellow-color;
+            @apply bg-Yellow;
          }
          & .icon div {
-            @include fill($yellow-color, 25);
+            @apply bg-Yellow;
          }
          & ol li span {
-            color: $yellow-color;
+            @apply text-Yellow;
          }
       }
       &:nth-child(4) {
          & .icon span::after {
-            background-color: $red-color;
+            @apply bg-Red;
          }
          & .icon div {
-            @include fill($red-color, 25);
+            @apply bg-Red;
          }
          & ol li span {
-            color: $red-color;
+            @apply text-Red;
          }
       }
    }

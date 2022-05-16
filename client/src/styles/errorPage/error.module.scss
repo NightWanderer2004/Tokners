@@ -1,8 +1,6 @@
-@import '../vars.scss';
-
 .title {
-   @apply text-[#{$red-color}] font-bold text-5xl lg:text-6xl;
+   @apply text-Red font-bold text-5xl lg:text-6xl;
 }
 .infoText {
-   @apply text-[#{$red-color}]/90 font-semibold text-3xl lg:text-4xl;
+   @apply text-Red/90 font-semibold text-3xl lg:text-4xl;
 }

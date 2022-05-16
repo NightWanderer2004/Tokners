@@ -1,9 +1,7 @@
-@import '../vars.scss';
-
 .main {
    @apply py-0 lg:py-8 2xl:py-28 text-white flex flex-wrap justify-center gap-3;
    & li {
-      @apply bg-[#171B29] rounded-3xl p-5 min-h-[130px] lg:min-h-[165px] flex flex-col justify-between;
+      @apply bg-secondary rounded-3xl p-5 min-h-[130px] lg:min-h-[165px] flex flex-col justify-between;
       & header {
          @apply mb-2 flex items-end gap-x-2 font-bold text-xs lg:text-sm;
          & .icon {
@@ -23,27 +21,27 @@
          }
       }
       &:nth-child(4n - 3) header {
-         color: $green-color;
+         @apply text-Green;
          & .icon {
-            @include fill($green-color, 20);
+            @apply bg-Green;
          }
       }
       &:nth-child(4n - 2) header {
-         color: $yellow-color;
+         @apply text-Yellow;
          & .icon {
-            @include fill($yellow-color, 20);
+            @apply bg-Yellow;
          }
       }
       &:nth-child(4n - 1) header {
-         color: $blue-color;
+         @apply text-Blue;
          & .icon {
-            @include fill($blue-color, 20);
+            @apply bg-Blue;
          }
       }
       &:nth-child(4n) header {
-         color: $red-color;
+         @apply text-Red;
          & .icon {
-            @include fill($red-color, 20);
+            @apply bg-Red;
          }
       }
    }

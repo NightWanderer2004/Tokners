@@ -1,5 +1,3 @@
-@import '../vars.scss';
-
 .main {
    @apply py-[50px] lg:py-[100px] lg:max-h-[900px] font-bold text-white;
    & h4 {
@@ -23,8 +21,7 @@
          &:nth-child(1) {
             @apply self-center;
             strong {
-               color: $yellow-color;
-               @apply text-[42px] sm:text-5xl lg:text-8xl;
+               @apply text-Yellow text-[42px] sm:text-5xl lg:text-8xl;
             }
          }
          &:nth-child(2) strong,
@@ -34,13 +31,13 @@
          &:nth-child(2) {
             @apply self-end lg:self-start;
             & strong {
-               color: $blue-color;
+               @apply text-Blue;
             }
          }
          &:nth-child(3) {
             @apply lg:self-end;
             strong {
-               color: $red-color;
+               @apply text-Red;
             }
          }
       }

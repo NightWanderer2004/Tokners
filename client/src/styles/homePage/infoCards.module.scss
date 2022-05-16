@@ -1,26 +1,22 @@
-@import '../vars.scss';
-
 .main {
    @apply pt-32 pb-24 md:flex gap-x-3;
    & .card {
-      @apply bg-[#171B29] my-2 p-[30px] flex-[0_50%_100%] rounded-xl;
+      @apply bg-secondary my-2 p-[30px] flex-[0_50%_100%] rounded-xl;
       &:nth-child(1) {
          & .image {
-            @include fill($green-color, 20);
+            @apply bg-Green;
          }
          & h3 span {
-            color: $green-color;
-            border-color: $green-color;
+            @apply text-Green border-Green;
          }
          @apply -top-[40px] md:relative;
       }
       &:nth-child(2) {
          & .image {
-            @include fill($blue-color, 20);
+            @apply bg-Blue;
          }
          & h3 span {
-            color: $blue-color;
-            border-color: $blue-color;
+            @apply text-Blue border-Blue;
          }
          @apply -bottom-[40px] md:relative;
       }
