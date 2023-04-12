@@ -11,5 +11,3 @@
 - Express;
 - React + Redux;
 - NodeJS;
-
-#### Web page deploying on heroku
